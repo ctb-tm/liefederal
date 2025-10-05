@@ -1,425 +1,348 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Lei de Incentivo ao Esporte • Check-List</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <style>
-    :root{
-      --azul:#19305A;
-      --verde:#2BA02D;
-      --verde-claro:#C3FE4D;
-      --branco:#ffffff;
-      --cinza:#F6F7FA;
-      --vermelho:#d32f2f;
-      --radius:14px;
-      --glass: rgba(255,255,255,0.65);
+    :root {
+      --azul: #19305A;
+      --verde: #2BA02D;
+      --verde-claro: #C3FE4D;
+      --branco: #fff;
+      --cinza: #F6F7FA;
+      --vermelho: #d32f2f;
+      --azul5: rgba(25,48,90,0.05);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      padding:0;
-      background: linear-gradient(180deg,#f8fafc 0%, #f1f5f9 100%);
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--cinza);
       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-      color:var(--azul);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
+      color: var(--azul);
+      min-height: 100vh;
     }
-
-    .container{
-      width:100%;
-      max-width:760px;
-      background:var(--branco);
-      border-radius:24px;
-      box-shadow: 0 10px 40px rgba(25,48,90,0.12), 0 2px 8px rgba(43,160,45,0.06);
-      overflow:hidden;
-      border:1px solid #e6eef5;
+    .container {
+      max-width: 810px;
+      margin: 32px auto 24px auto;
+      background: var(--branco);
+      border-radius: 22px;
+      box-shadow: 0 8px 44px rgba(25,48,90,0.13);
+      overflow: hidden;
+      padding-bottom: 7px;
     }
-
-    .header-hero{
-      background: linear-gradient(180deg, rgba(25,48,90,0.03), rgba(43,160,45,0.02));
-      text-align:center;
-      padding:22px 18px;
-      position:relative;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:center;
+    .header-hero {
+      background: var(--branco);
+      text-align: center;
+      position: relative;
+      margin-bottom: 0;
     }
-
-    .brand-wrap{
-      display:flex;
-      gap:14px;
-      align-items:center;
+    .header-hero img {
+      width: 72px;
+      height: 72px;
+      max-width: 92px;
+      max-height: 92px;
+      margin: 18px auto 8px auto;
+      display: block;
+      box-shadow: none;
+      border: none;
+      object-fit: contain;
+      background: none;
+      padding: 0;
     }
-
-    .header-hero img{
-      width:72px;
-      height:72px;
-      border-radius:50%;
-      object-fit:contain;
-      border:2px solid var(--verde);
-      background:var(--white);
-      box-shadow: 0 6px 22px #c3fe4d22;
-      padding:6px;
+    .main-title {
+      font-size: 2em;
+      font-weight: 900;
+      color: var(--azul);
+      margin-bottom: 3px;
+      margin-top: 10px;
+      line-height: 1.1;
+      letter-spacing: .4px;
+      text-shadow: 0 1px 0 #c3fe4d33;
     }
-
-    .title-block{
-      text-align:left;
-      line-height:1;
+    .subtitle {
+      color: var(--verde);
+      font-size: 1.08em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      margin-top: 1px;
     }
-
-    .main-title{
-      font-size:1.45rem;
-      font-weight:900;
-      color:var(--azul);
-      margin:0;
-      letter-spacing:0.2px;
+    .download-btn {
+      display: inline-block;
+      background: var(--vermelho);
+      color: var(--branco);
+      font-weight: 800;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 30px;
+      font-size: 1em;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 20px rgba(211,47,47,0.11);
+      cursor: pointer;
+      background-image: linear-gradient(90deg,rgb(211,47,47) 60%,#b71c1c 100%);
+      transition: background 0.19s, transform 0.14s;
+      text-decoration: none;
     }
-    .subtitle{
-      margin:4px 0 0 0;
-      font-weight:700;
-      color:var(--verde);
-      font-size:0.99rem;
-      letter-spacing:0.9px;
+    .download-btn:hover {
+      background: #a61616;
+      background-image: none;
+      color: #fff;
+      transform: translateY(-1.5px) scale(1.01);
     }
-
-    .download-btn{
-      margin-left:auto;
-      text-decoration:none;
-      background: linear-gradient(90deg, #d32f2f 0%, #b71c1c 100%);
-      color:var(--branco);
-      padding:10px 18px;
-      border-radius:999px;
-      font-weight:800;
-      box-shadow: 0 6px 24px rgba(211,47,47,0.12);
-      transition: transform .17s ease, box-shadow .17s ease;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border:none;
-      font-size:0.95rem;
+    .section-card {
+      background: var(--branco);
+      border-radius: 13px;
+      box-shadow: 0 5px 24px #2BA02D11;
+      margin: 28px 3.5% 0 3.5%;
+      padding: 19px 3.5% 15px 3.5%;
     }
-    .download-btn:hover{ transform:translateY(-3px); box-shadow: 0 12px 36px rgba(211,47,47,0.18); }
-
-    .section-card{
-      padding:20px 22px 12px 22px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.48));
+    .section-title {
+      font-size: 1.09em;
+      color: var(--verde);
+      margin-bottom: 14px;
+      margin-top: 0;
+      font-weight: 900;
+      letter-spacing: .5px;
+      text-shadow: none;
     }
-
-    .section-title{
-      font-size:1rem;
-      color:var(--verde);
-      margin:0 0 14px 0;
-      font-weight:900;
-      letter-spacing:0.6px;
-      text-shadow: 0 1.5px 10px #2ba02d18;
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 7px;
+      margin-bottom: 8px;
+      word-break: break-word;
     }
-
-    table{
-      width:100%;
-      border-collapse:collapse;
-      border-spacing:0 10px;
-      font-size:0.98rem;
+    th, td {
+      font-size: 1em;
+      color: var(--azul);
+      background: var(--cinza);
+      padding: 11px 8px;
+      border-radius: 6px;
+      box-shadow: 0 0.7px 0.6px #2BA02D08;
     }
-    thead th{
-      text-align:left;
-      background:var(--verde);
-      color:var(--branco);
-      padding:12px 12px;
-      font-weight:800;
-      text-transform:uppercase;
-      font-size:0.86rem;
-      letter-spacing:1px;
-      border-radius:8px;
+    th {
+      background: var(--verde);
+      color: var(--branco);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 6px 6px 0 0;
+      border-bottom: 2px solid var(--verde-claro);
     }
-    tbody tr{
-      transition: transform .12s ease;
+    .percent {
+      font-weight: 900;
+      background: var(--verde-claro);
+      color: var(--azul);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 1.03em;
+      text-align: center;
     }
-    tbody tr:hover{ transform:translateY(-4px); }
-    td{
-      background:var(--cinza);
-      padding:12px;
-      border-radius:10px;
-      vertical-align:middle;
-      color:var(--azul);
+    .explanation-area {
+      width: 94%;
+      margin: 29px auto 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      justify-content: space-between;
+      align-items: stretch;
     }
-    td + td{ padding-left:14px; }
-
-    .percent{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+    .sub-box-left {
+      background: var(--azul);
+      color: var(--branco);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px #19305A16;
+      border: none;
+      padding: 22px 6% 18px 6%;
+      min-width: 230px;
+      flex: 1 1 320px;
+      margin: 0;
+      max-width: 365px;
+      font-size: 1.01em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
-
-    .badge{
-      font-weight:900;
-      background:var(--verde-claro);
-      color:var(--azul);
-      padding:8px 12px;
-      border-radius:999px;
-      border:2px solid var(--verde);
-      min-width:64px;
-      text-align:center;
-      box-shadow: 0 2px 10px #19305A10;
-      font-size:0.95rem;
+    .sub-box-right {
+      background: var(--azul5);
+      color: var(--azul);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #19305A0b;
+      padding: 22px 6% 18px 6%;
+      min-width: 230px;
+      flex: 1 1 320px;
+      margin: 0;
+      max-width: 365px;
+      border: none;
+      font-size: 1.01em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
-
-    .bar-wrap{
-      width:120px;
-      height:10px;
-      background:rgba(25,48,90,0.06);
-      border-radius:999px;
-      overflow:hidden;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    .sub-box-title {
+      font-size: 1.07em;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: .52px;
+      color: inherit;
+      text-shadow: none;
+      line-height: 1.23;
     }
-    .bar{
-      height:100%;
-      background: linear-gradient(90deg, var(--verde-claro), var(--verde));
-      width:0%;
-      transition: width 800ms cubic-bezier(.2,.9,.28,1.02);
+    .step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      font-size: 0.96em;
+      color: inherit;
+      line-height: 1.43;
+      font-weight: 600;
+      word-break: break-word;
     }
-
-    /* Explanation boxes */
-    .explanation-area{
-      padding:18px 22px 6px 22px;
+    .step-number {
+      background: var(--verde-claro);
+      color: var(--azul);
+      font-weight: 900;
+      border-radius: 50%;
+      width: 19px;
+      height: 19px;
+      min-width: 19px;
+      min-height: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .93em;
+      margin-right: 8px;
+      margin-top: 2px;
+      box-shadow: 0 .7px 5px #c3fe4d20;
     }
-    .sub-box-group{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      justify-content:space-between;
+    .contact-footer {
+      margin: 22px auto 0 auto;
+      border-radius: 12px;
+      background: var(--branco);
+      text-align: center;
+      font-weight: 900;
+      color: var(--azul);
+      font-size: 1.07em;
+      letter-spacing: 0.44px;
+      padding: 14px 6% 12px 6%;
+      box-shadow: 0 .9px 7px #2BA02D13;
     }
-    .sub-box{
-      flex:1 1 320px;
-      min-width:260px;
-      background:var(--cinza);
-      border-radius:var(--radius);
-      padding:16px;
-      border:1.25px solid rgba(195,254,77,0.12);
-      box-shadow: 0 6px 22px rgba(43,160,45,0.06);
+    .footer {
+      text-align: center;
+      color: var(--azul);
+      font-size: 0.98em;
+      font-weight: 800;
+      margin-top: 6px;
+      letter-spacing: .7px;
+      background: var(--branco);
+      border-radius: 0 0 13px 13px;
+      width: 100%;
+      padding: 11px 0 4px 0;
+      margin-bottom: 4px;
+      box-shadow: 0 1.1px 3px #19305A07;
     }
-    .sub-box .section-title{ color:var(--azul); font-size:0.98rem; margin-bottom:10px; }
-
-    .step{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      margin-bottom:10px;
-      line-height:1.4;
-      font-size:0.96rem;
+    a, a:visited {
+      color: var(--azul);
+      text-decoration: underline;
+      font-weight: 700;
     }
-    .step-number{
-      background:var(--verde-claro);
-      color:var(--azul);
-      font-weight:900;
-      border-radius:50%;
-      width:26px;
-      height:26px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:0.92rem;
-      box-shadow: 0 2px 12px rgba(195,254,77,0.12);
-      flex-shrink:0;
+    a:hover {
+      color: var(--verde);
+      text-decoration: none;
     }
-
-    .contact-footer{
-      margin:18px;
-      padding:14px;
-      background:var(--branco);
-      border-radius:12px;
-      text-align:center;
-      font-weight:900;
-      color:var(--azul);
-      font-size:0.98rem;
-      box-shadow: 0 6px 20px rgba(43,160,45,0.06);
+    @media (max-width: 990px) {
+      .container {max-width: 99vw;}
+      .explanation-area { flex-direction: column; gap:20px;}
+      .sub-box-left, .sub-box-right {max-width: 99vw;}
     }
-
-    .footer{
-      text-align:center;
-      color:var(--azul);
-      font-size:0.95rem;
-      font-weight:800;
-      padding:12px 0 18px 0;
-      letter-spacing:0.8px;
-    }
-
-    a, a:visited{ color:var(--azul); text-decoration:underline; font-weight:700; }
-    a:hover{ color:var(--verde); text-decoration:none; }
-
-    /* small screens */
-    @media (max-width:720px){
-      .header-hero{ padding:16px; flex-direction:column; gap:8px; }
-      .download-btn{ margin-left:0; }
-      .brand-wrap{ flex-direction:row; align-items:center; gap:12px; }
-      .title-block{text-align:center}
-      .sub-box-group{flex-direction:column}
+    @media (max-width: 600px) {
+      .header-hero img {width: 52px; height:52px;}
+      .section-card, .explanation-area {padding-left:1vw; padding-right:1vw;}
+      .main-title {font-size: 1.25em;}
     }
   </style>
 </head>
 <body>
-  <div class="container" role="region" aria-label="Infográfico Lei de Incentivo ao Esporte — Check-list">
+  <div class="container">
     <div class="header-hero">
-      <div class="brand-wrap" aria-hidden="false">
-        <!-- Substitua 'ctb.png' pelo caminho correto do logotipo -->
-        <img src="ctb.png" alt="Logotipo Clube dos Tenistas da Bahia (CTB)" />
-        <div class="title-block">
-          <h1 class="main-title">Check-List</h1>
-          <div class="subtitle">Lei de Incentivo ao Esporte</div>
-        </div>
-      </div>
-
-      <a class="download-btn" href="cartilhaLIE.pdf" download aria-label="Baixar cartilha Lei de Incentivo ao Esporte">
-        Baixar cartilha
-      </a>
+      <img src="ctb.png" alt="Logo CTB">
+      <div class="main-title">Check-List</div>
+      <div class="subtitle">Lei de Incentivo ao Esporte</div>
+      <a class="download-btn" href="cartilhaLIE.pdf" download>Cartilha LIE</a>
     </div>
-
-    <div class="section-card" aria-labelledby="etapas-title">
-      <h2 id="etapas-title" class="section-title">Etapas e Percentuais</h2>
-
-      <table role="table" aria-label="Tabela de etapas da Lei de Incentivo ao Esporte">
-        <thead>
-          <tr>
-            <th scope="col">Etapa</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Percentual</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cadastro do Projeto</td>
-            <td>Elabore, detalhe e registre o projeto no portal oficial do Ministério do Esporte.</td>
-            <td>
-              <div class="percent" aria-hidden="true">
-                <span class="badge">—</span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Aprovação Técnica</td>
-            <td>Aguarde análise, parecer e aprovação técnica para emitir a Autorização de Captação.</td>
-            <td>
-              <div class="percent">
-                <span class="badge">—</span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Captação de Recursos (Empresas)</td>
-            <td>Contate empresas no regime do Lucro Real; assinatura de carta e certificado de captação.</td>
-            <td>
-              <div class="percent" title="Até 2% do IR devido por empresas">
-                <span class="badge">até 2%</span>
-                <div class="bar-wrap" aria-hidden="true">
-                  <div class="bar" data-value="2"></div>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Captação de Recursos (Pessoas Físicas)</td>
-            <td>Pessoas físicas podem destinar parte do seu imposto devido a projetos aprovados.</td>
-            <td>
-              <div class="percent" title="Até 7% do IRPF">
-                <span class="badge">até 7%</span>
-                <div class="bar-wrap" aria-hidden="true">
-                  <div class="bar" data-value="7"></div>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Execução do Projeto</td>
-            <td>Implemente ações, cumpra cronograma e metas conforme aprovado.</td>
-            <td>
-              <div class="percent">
-                <span class="badge">—</span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Prestação de Contas</td>
-            <td>Envie relatórios semestrais/finais com documentos, notas fiscais e indicadores.</td>
-            <td>
-              <div class="percent">
-                <span class="badge">—</span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Visibilidade ao Patrocinador</td>
-            <td>Garanta divulgação institucional conforme regras da Lei e no Termo de Patrocínio.</td>
-            <td>
-              <div class="percent">
-                <span class="badge">—</span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
+    <div class="section-card">
+      <div class="section-title">Etapas e Percentuais</div>
+      <table>
+        <tr>
+          <th>Etapa</th>
+          <th>Descrição</th>
+          <th>Percentual</th>
+        </tr>
+        <tr>
+          <td>Cadastro do Projeto</td>
+          <td>Elabore, detalhe e registre o projeto no portal oficial do Ministério do Esporte.</td>
+          <td class="percent">--</td>
+        </tr>
+        <tr>
+          <td>Aprovação Técnica</td>
+          <td>Aguarde análise, parecer e aprovação técnica para emitir a Autorização de Captação.</td>
+          <td class="percent">--</td>
+        </tr>
+        <tr>
+          <td>Captação de Recursos (Empresas)</td>
+          <td>Contate empresas do Lucro Real para captar com carta e certificado de captação.</td>
+          <td class="percent">até 2% IR</td>
+        </tr>
+        <tr>
+          <td>Captação de Recursos (Pessoas Físicas)</td>
+          <td>Pessoas físicas podem destinar parte do seu imposto devido a projetos aprovados.</td>
+          <td class="percent">até 7% IRPF</td>
+        </tr>
+        <tr>
+          <td>Execução do Projeto</td>
+          <td>Implemente ações, cumpra cronograma e metas conforme aprovado.</td>
+          <td class="percent">--</td>
+        </tr>
+        <tr>
+          <td>Prestação de Contas</td>
+          <td>Envie relatórios semestrais/finais com documentos, notas e indicadores.</td>
+          <td class="percent">--</td>
+        </tr>
+        <tr>
+          <td>Visibilidade ao Patrocinador</td>
+          <td>Garanta divulgação institucional conforme regras da Lei.</td>
+          <td class="percent">--</td>
+        </tr>
       </table>
     </div>
-
-    <div class="explanation-area" aria-label="Como patrocinar via Lei de Incentivo">
-      <div class="sub-box-group">
-        <div class="sub-box" aria-labelledby="empresa-title">
-          <h3 id="empresa-title" class="section-title">Como uma Empresa Patrocina via Lei de Incentivo ao Esporte</h3>
-          <div class="step"><div class="step-number">1</div>Empresa precisa estar no regime do <strong>Lucro Real</strong>.</div>
-          <div class="step"><div class="step-number">2</div>Selecionar projeto aprovado e apto a captar.</div>
-          <div class="step"><div class="step-number">3</div>Investir até <strong>2%</strong> do IR devido e emitir documentação.</div>
-          <div class="step"><div class="step-number">4</div>Assinar termo de patrocínio e transferir valores à conta do projeto.</div>
-          <div class="step"><div class="step-number">5</div>Registrar comprovação para dedução fiscal conforme legislação.</div>
-          <div class="step"><div class="step-number">6</div>Monitorar execução e receber relatórios do projeto.</div>
-        </div>
-
-        <div class="sub-box" aria-labelledby="pf-title">
-          <h3 id="pf-title" class="section-title">Como funciona o Patrocínio por Pessoas Físicas</h3>
-          <div class="step"><div class="step-number">1</div>Declaração do IR completa: pode destinar até <strong>7%</strong> do imposto devido.</div>
-          <div class="step"><div class="step-number">2</div>Apoio ao projeto aprovado com comprovante de destinação.</div>
-          <div class="step"><div class="step-number">3</div>Depósito identificado direto na conta do projeto.</div>
-          <div class="step"><div class="step-number">4</div>Deduz no ajuste do IR até <strong>7%</strong> conforme regras vigentes.</div>
-          <div class="step"><div class="step-number">5</div>Acompanhamento dos resultados pelo apoiador por meio de relatórios.</div>
-        </div>
+    <div class="explanation-area">
+      <div class="sub-box-left">
+        <div class="sub-box-title">Como uma Empresa Patrocina via Lei de Incentivo ao Esporte</div>
+        <div class="step"><span class="step-number">1</span>Empresa precisa estar no Lucro Real.</div>
+        <div class="step"><span class="step-number">2</span>Selecionar projeto aprovado e apto a captar.</div>
+        <div class="step"><span class="step-number">3</span>Investir até 2% do IR devido.</div>
+        <div class="step"><span class="step-number">4</span>Assinar termo de patrocínio e transferir à conta do projeto.</div>
+        <div class="step"><span class="step-number">5</span>Deduzir 100% do valor na declaração do IR devido.</div>
+        <div class="step"><span class="step-number">6</span>Monitorar execução e receber relatórios.</div>
+      </div>
+      <div class="sub-box-right">
+        <div class="sub-box-title">Como funciona o Patrocínio por Pessoas Físicas</div>
+        <div class="step"><span class="step-number">1</span>Declaração do IR completa: pode destinar até <b>7%</b> do imposto devido.</div>
+        <div class="step"><span class="step-number">2</span>Apoio ao projeto aprovado com comprovante de destinação.</div>
+        <div class="step"><span class="step-number">3</span>Depósito identificado direto na conta do projeto.</div>
+        <div class="step"><span class="step-number">4</span>Deduz no ajuste IR até 7%.</div>
+        <div class="step"><span class="step-number">5</span>Acompanhamento dos resultados pelo apoiador via relatórios.</div>
       </div>
     </div>
-
-    <div class="contact-footer" role="contentinfo" aria-label="Contato Clube dos Tenistas da Bahia">
+    <div class="contact-footer">
       CNPJ 23.146.328/0001-16 &nbsp;|&nbsp; Contato: Paulo Carneiro <br>
-      <a href="mailto:paulo@ctb-ba.com.br">paulo@ctb-ba.com.br</a> &nbsp;|&nbsp; <span aria-hidden="true">71-98530-4903</span>
+      <a href="mailto:paulo@ctb-ba.com.br">paulo@ctb-ba.com.br</a> &nbsp;|&nbsp; 71-98530-4903
     </div>
-
-    <div class="footer" aria-hidden="false">Clube dos Tenistas da Bahia</div>
+    <div class="footer">
+      Clube dos Tenistas da Bahia
+    </div>
   </div>
-
-  <script>
-    // animação das barras com base no atributo data-value
-    document.addEventListener('DOMContentLoaded', function(){
-      const bars = document.querySelectorAll('.bar');
-      bars.forEach(bar => {
-        const v = parseFloat(bar.getAttribute('data-value')) || 0;
-        // map 0-100 (we use small percent values like 2 or 7)
-        const pct = Math.max(0, Math.min(100, v));
-        // para visual: transformar (2% -> 28% do comprimento) — ajuste estético
-        let visual = pct;
-        if (pct <= 10) visual = pct * 10; // amplifica pequenos %
-        else visual = pct;
-        // garantimos um mínimo visível
-        const final = Math.max(10, visual);
-        setTimeout(() => { bar.style.width = final + '%'; }, 120);
-      });
-    });
-  </script>
 </body>
 </html>
