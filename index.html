@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Infográfico - Instituição Proponente | Lei de Incentivo ao Esporte</title>
+  <title>Infográfico - Lei de Incentivo ao Esporte</title>
   <style>
     body {
       background: #19305A;
@@ -15,47 +15,40 @@
       width: 700px;
       margin: 40px auto;
       border-radius: 14px;
-      padding: 36px 38px;
+      padding: 30px 0 0 0;
       box-shadow: 0 4px 22px rgba(25,48,90,0.14);
       position: relative;
     }
     .header {
-      width: 100%;
-      position: relative;
-      background: rgba(43,160,45,0.05); /* Verde 100% com 5% opacidade */
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 28px 18px 28px;
-      margin-bottom: 24px;
-      box-sizing: border-box;
-    }
-    .logo {
-      flex: 0 0 auto;
-    }
-    .header-content {
-      flex: 1 1 auto;
+      background: #fff;
+      border-radius: 14px 14px 0 0;
+      padding: 30px 30px 18px 30px;
       text-align: center;
+      position: relative;
     }
-    .header-title {
-      font-size: 1.6em;
+    .header img {
+      max-width: 140px;
+      margin: 0 auto 18px auto;
+      display: block;
+    }
+    .main-title {
+      color: #2BA02D;
+      font-size: 1.4em;
       font-weight: bold;
-      color: #19305A; /* Azul 100% */
       letter-spacing: 1px;
-      margin-bottom: 0;
-      margin-top: 0;
-      line-height: 1.2;
+      margin-bottom: 2px;
     }
-    .header-subtitle {
-      color: #fff;
-      font-size: 1em;
-      margin: 0;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      line-height: 1.2;
+    .subtitle {
+      color: #19305A;
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 14px;
+      margin-top: 0;
     }
     .download-btn {
+      position: absolute;
+      top: 36px;
+      right: 40px;
       background: #d32f2f;
       color: #fff;
       border: none;
@@ -68,17 +61,16 @@
       text-decoration: none;
       box-shadow: 0 3px 7px rgba(100,30,30,0.11);
       display: inline-block;
-      margin-left: 16px;
-      margin-right: 0;
+      z-index: 2;
     }
     .download-btn:hover {
       background: #b71c1c;
       text-decoration: none;
     }
     table {
-      width: 100%;
+      width: 92%;
+      margin: 30px auto 18px auto;
       border-collapse: collapse;
-      margin-bottom: 18px;
     }
     th, td {
       font-size: 1.05em;
@@ -89,7 +81,7 @@
       background: none;
     }
     th {
-      background: #2BA02D; /* Verde 100% */
+      background: #2BA02D;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -108,17 +100,15 @@
       background: #2BA02D;
       border-radius: 8px;
       padding: 20px;
-      margin: 30px 0 20px 0;
+      margin: 30px auto 20px auto;
       color: #fff !important;
+      width: 92%;
     }
     .explanation-box h3 {
-      font-size: 1.24em;
+      font-size: 1.18em;
       color: #fff;
       margin-bottom: 15px;
       font-weight: bold;
-    }
-    .explanation-box p, .explanation-box strong {
-      color: #fff;
     }
     .step-number {
       background: #C3FE4D;
@@ -134,23 +124,33 @@
       margin-right: 8px;
     }
     .contact-footer {
-      margin-top: 30px;
+      margin: 30px auto 0 auto;
       border-radius: 9px;
-      background: #2BA02D;
+      background: #fff;
       padding: 16px 0 10px 0;
       text-align: center;
       font-weight: bold;
       color: #19305A;
       font-size: 1.06em;
       letter-spacing: 0.5px;
+      width: 94%;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
     }
     .footer {
       text-align: center;
-      color: #C3FE4D;
-      font-size: 1.09em;
+      color: #19305A;
+      font-size: 1.07em;
       font-weight: bold;
-      margin-top: 15px;
+      margin-top: 12px;
+      margin-bottom: 8px;
       letter-spacing: 1px;
+      background: #fff;
+      border-radius: 0 0 14px 14px;
+      width: 94%;
+      padding: 10px 0 4px 0;
+      margin-left: auto;
+      margin-right: auto;
     }
     a, a:visited {
       color: #19305A;
@@ -161,22 +161,19 @@
       color: #2BA02D;
     }
     @media (max-width: 760px) {
-      .infographic-box {width: 99vw !important; padding: 10px !important;}
-      .logo img {max-width: 28vw;}
-      .download-btn {padding: 10px 16px;}
+      .infographic-box {width: 99vw !important;}
+      .header img {max-width: 28vw;}
+      .download-btn {position: static; margin-top: 12px; display: block;}
+      .footer, .contact-footer, .explanation-box, table {width: 98%;}
     }
   </style>
 </head>
 <body>
   <div class="infographic-box">
     <div class="header">
-      <div class="logo">
-        <img src="ctb.png" alt="Logo CTB" style="max-width:90px;">
-      </div>
-      <div class="header-content">
-        <div class="header-title">Checklist do Proponente</div>
-        <div class="header-subtitle">Lei de Incentivo ao Esporte</div>
-      </div>
+      <img src="ctb.png" alt="Logo CTB">
+      <div class="main-title">Check-List</div>
+      <div class="subtitle">Lei de Incentivo ao Esporte</div>
       <a class="download-btn" href="cartilhaLIE.pdf" download>Cartilha LIE</a>
     </div>
     <table>
