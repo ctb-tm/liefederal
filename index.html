@@ -5,37 +5,38 @@
   <title>Infográfico - Instituição Proponente | Lei de Incentivo ao Esporte</title>
   <style>
     body {
-      background: #192a56;
+      background: #19305A; /* Azul 100% */
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
     }
     .infographic-box {
-      background: #23376b;
+      background: #19305A; /* Fundo externo azul 100% */
       color: #fff;
       width: 700px;
       margin: 40px auto;
       border-radius: 14px;
       padding: 36px 38px;
-      box-shadow: 0 4px 22px rgba(30,40,80,0.14);
+      box-shadow: 0 4px 22px rgba(25,48,90,0.14);
       position: relative;
     }
     .header {
       text-align: center;
       margin-bottom: 20px;
-      background: rgba(0,255,255,0.20);
+      background: rgba(195,254,77,0.05); /* Verde 5% */
       border-radius: 12px;
       padding: 20px 0 18px 0;
       position: relative;
     }
     .header img {
       max-width: 140px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    h1 {
+    .header-title {
       font-size: 1.6em;
       font-weight: bold;
       margin-bottom: 2px;
       letter-spacing: 1px;
+      color: #19305A; /* Título no cabeçalho azul 100% */
     }
     .download-btn {
       position: absolute;
@@ -65,20 +66,22 @@
     }
     th, td {
       font-size: 1.05em;
-      border-bottom: 1px solid #3867d6;
+      border-bottom: 1px solid #C3FE4D;
       padding: 13px 10px;
       text-align: left;
       color: #fff;
+      background: none;
     }
     th {
-      background: #314e7c;
+      background: #2BA02D; /* Título da tabela verde 100% */
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
+      color: #fff;
     }
     .percent {
       font-weight: bold;
-      background: #3867d6;
+      background: #2BA02D;
       color: #fff;
       border-radius: 8px;
       padding: 6px 14px;
@@ -86,27 +89,24 @@
       text-align: center;
     }
     .explanation-box {
-      background: #34495e;
-      border-left: 5px solid #00ffff;
+      background: #2BA02D; /* Detalhes fundo verde 100% */
       border-radius: 8px;
       padding: 20px;
       margin: 30px 0 20px 0;
+      color: #fff !important;
     }
     .explanation-box h3 {
-      font-size: 1.3em;
-      color: #00ffff;
+      font-size: 1.24em;
+      color: #fff;
       margin-bottom: 15px;
       font-weight: bold;
     }
-    .explanation-box p {
-      font-size: 1.05em;
-      line-height: 1.6;
-      margin-bottom: 12px;
-      color: #ecf0f1;
+    .explanation-box p, .explanation-box strong {
+      color: #fff;
     }
     .step-number {
-      background: #3867d6;
-      color: #fff;
+      background: #C3FE4D;
+      color: #19305A;
       border-radius: 50%;
       width: 25px;
       height: 25px;
@@ -117,15 +117,33 @@
       font-size: 0.9em;
       margin-right: 8px;
     }
+    .contact-footer {
+      margin-top: 30px;
+      border-radius: 9px;
+      background: #2BA02D;
+      padding: 16px 0 10px 0;
+      text-align: center;
+      font-weight: bold;
+      color: #19305A;
+      font-size: 1.06em;
+      letter-spacing: 0.5px;
+    }
     .footer {
       text-align: center;
-      color: #32baff;
+      color: #C3FE4D;
       font-size: 1.09em;
       font-weight: bold;
-      margin-top: 28px;
+      margin-top: 15px;
       letter-spacing: 1px;
     }
-    /* Responsividade para pequenas telas */
+    a, a:visited {
+      color: #19305A;
+      text-decoration: underline;
+    }
+    a:hover {
+      text-decoration: none;
+      color: #2BA02D;
+    }
     @media (max-width: 760px) {
       .infographic-box {width: 99vw !important; padding: 10px !important;}
       .header img {max-width: 28vw;}
@@ -137,10 +155,9 @@
   <div class="infographic-box">
     <div class="header">
       <img src="ctb.png" alt="Logo CTB">
-      <h1>Checklist do Proponente<br>Lei de Incentivo ao Esporte</h1>
+      <div class="header-title">Checklist do Proponente<br>Lei de Incentivo ao Esporte</div>
       <a class="download-btn" href="cartilhalie.pdf" download>Cartilha LIE</a>
     </div>
-    
     <table>
       <tr>
         <th>Etapa</th>
@@ -165,7 +182,7 @@
       <tr>
         <td>Captação de Recursos (Pessoas Físicas)</td>
         <td>Pessoas físicas podem destinar parte do seu imposto devido a projetos aprovados.</td>
-        <td class="percent">até 6% IRPF</td>
+        <td class="percent">até 7% IRPF</td>
       </tr>
       <tr>
         <td>Execução do Projeto</td>
@@ -183,7 +200,6 @@
         <td class="percent">--</td>
       </tr>
     </table>
-
     <div class="explanation-box">
       <h3>Como uma Empresa Patrocina via Lei de Incentivo ao Esporte</h3>
       <p><span class="step-number">1</span><strong>Verificação do Regime Tributário:</strong> Empresa precisa estar no Lucro Real.</p>
@@ -195,11 +211,15 @@
     </div>
     <div class="explanation-box">
       <h3>Como funciona o Patrocínio por Pessoas Físicas</h3>
-      <p><span class="step-number">1</span><strong>Direito e Limite:</strong> Qualquer contribuinte que faça a declaração do Imposto de Renda pelo formulário completo pode destinar até <b>6%</b> do IR devido para projetos esportivos aprovados na Lei de Incentivo ao Esporte.</p>
+      <p><span class="step-number">1</span><strong>Direito e Limite:</strong> Qualquer contribuinte que faça a declaração do Imposto de Renda pelo formulário completo pode destinar até <b>7%</b> do IR devido para projetos esportivos aprovados na Lei de Incentivo ao Esporte.</p>
       <p><span class="step-number">2</span><strong>Escolha do Projeto:</strong> O apoiador escolhe um projeto aprovado pelo Ministério do Esporte e emite um comprovante de destinação do valor.</p>
       <p><span class="step-number">3</span><strong>Transferência dos Recursos:</strong> O apoio é feito via depósito identificado direto na conta específica do projeto, conforme orientação do proponente.</p>
-      <p><span class="step-number">4</span><strong>Dedução Fiscal:</strong> No ajuste anual do IR, o contribuinte lança o valor doado para dedução no limite de 6% do imposto devido.</p>
-      <p><span class="step-number">5</span><strong>Transparência:</strong> O apoiador pode acompanhar a execução e impacto do projeto patrocinado através de relatórios fornecidos pelo proponente.</p>
+      <p><span class="step-number">4</span><strong>Dedução Fiscal:</strong> No ajuste anual do IR, o contribuinte lança o valor doado para dedução no limite de 7% do imposto devido.</p>
+      <p><span class="step-number">5</span><strong>Transparência:</strong> O apoiador pode acompanhar a execução e impacto do projeto patrocinado através de relatórios fornecidos pelo proponente.</p>
+    </div>
+    <div class="contact-footer">
+      CNPJ 23.146.328/0001-16 <br>
+      Contato: Paulo Carneiro - <a href="mailto:paulo@ctb-ba.com.br">paulo@ctb-ba.com.br</a> - 71-98530-4903
     </div>
     <div class="footer">
       Clube dos Tenistas da Bahia
