@@ -38,15 +38,27 @@
       align-items: center;
       position: relative;
     }
-    .header-hero img {
-      width: 86px;
-      height: 86px;
-      object-fit: contain;
-      margin-bottom: 18px;
+    .logobox {
+      margin-bottom: 19px;
+      width: 136px;
+      height: 136px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
-      box-shadow: 0 2px 18px rgba(43,160,45,0.09);
-      border: 3.5px solid var(--cinza);
       background: var(--cinza);
+      box-shadow: 0 4px 26px #C3FE4D33, 0 1.5px 9px #19305A11;
+      border: 6px solid var(--branco);
+    }
+    .header-hero img {
+      width: 98px;
+      height: 98px;
+      object-fit: contain;
+      background: none;
+      border-radius: 50%;
+      box-shadow: none;
+      border: none;
+      margin: 0;
     }
     .main-title {
       font-size: 2.1em;
@@ -59,10 +71,11 @@
     }
     .subtitle {
       color: var(--verde);
-      font-size: 1.21em;
+      font-size: 1.18em;
       font-weight: 700;
       letter-spacing: 1px;
       margin-bottom: 10px;
+      margin-top: 1px;
     }
     .download-btn {
       display: inline-block;
@@ -71,15 +84,15 @@
       font-weight: 800;
       border: none;
       border-radius: 999px;
-      padding: 14px 38px 14px 38px;
+      padding: 13px 38px;
       font-size: 1em;
       margin-top: 18px;
-      margin-bottom: 2px;
+      margin-bottom: 0;
       letter-spacing: 1.2px;
       box-shadow: 0 3px 20px rgba(211,47,47,0.16);
       cursor: pointer;
       background-image: linear-gradient(90deg,rgb(211,47,47) 60%,#b71c1c 100%);
-      transition: background 0.23s;
+      transition: background 0.23s, transform 0.17s;
       text-decoration: none;
     }
     .download-btn:hover {
@@ -140,11 +153,24 @@
       border: 2px solid #2BA02D;
       box-shadow: 0 0.5px 6px #19305A10;
     }
+    .box {
+      background: var(--cinza);
+      border-radius: 12px;
+      box-shadow: 0 7px 32px #2ba02d12;
+      padding: 24px 5% 21px 5%;
+      margin-bottom: 32px;
+      margin-top: 14px;
+      border: 1.5px solid var(--verde-claro);
+    }
+    .box .section-title {
+      color: var(--azul);
+      font-size: 1.13em;
+    }
     .step {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 11px;
-      font-size: 1.07em;
+      margin-bottom: 12px;
+      font-size: 1.06em;
       color: var(--azul);
     }
     .step-number {
@@ -198,8 +224,9 @@
       text-decoration: none;
     }
     @media (max-width: 760px) {
-      .container, .footer, .contact-footer, .section-card { width: 99vw !important; padding-left: 2vw !important; padding-right: 2vw !important;}
-      .header-hero img {max-width: 22vw;}
+      .container, .footer, .contact-footer, .section-card, .box { width: 99vw !important; padding-left: 2vw !important; padding-right: 2vw !important;}
+      .logobox { width: 32vw; height: 32vw; min-width: 92px; min-height: 92px; }
+      .header-hero img {max-width: 26vw; max-height: 26vw;}
       .download-btn{padding:12px 5vw;}
     }
   </style>
@@ -207,7 +234,9 @@
 <body>
   <div class="container">
     <div class="header-hero">
-      <img src="ctb.png" alt="Logo CTB">
+      <div class="logobox">
+        <img src="ctb.png" alt="Logo CTB">
+      </div>
       <div class="main-title">Check-List</div>
       <div class="subtitle">Lei de Incentivo ao Esporte</div>
       <a class="download-btn" href="cartilhaLIE.pdf" download>Cartilha LIE</a>
@@ -257,7 +286,7 @@
         </tr>
       </table>
     </div>
-    <div class="section-card">
+    <div class="box">
       <div class="section-title">Como uma Empresa Patrocina via Lei de Incentivo ao Esporte</div>
       <div class="step"><span class="step-number">1</span><strong>Verificação do Regime Tributário:</strong> Empresa precisa estar no Lucro Real.</div>
       <div class="step"><span class="step-number">2</span><strong>Escolha do Projeto:</strong> Seleciona projeto aprovado e apto a captar.</div>
@@ -266,7 +295,7 @@
       <div class="step"><span class="step-number">5</span><strong>Dedução Fiscal:</strong> Deduz 100% do valor na declaração do IR devido.</div>
       <div class="step"><span class="step-number">6</span><strong>Acompanhamento:</strong> Monitora a execução do projeto e recebe relatórios.</div>
     </div>
-    <div class="section-card">
+    <div class="box">
       <div class="section-title">Como funciona o Patrocínio por Pessoas Físicas</div>
       <div class="step"><span class="step-number">1</span><strong>Direito e Limite:</strong> Qualquer contribuinte que faça a declaração do Imposto de Renda pelo formulário completo pode destinar até <b>7%</b> do IR devido para projetos esportivos aprovados na Lei de Incentivo ao Esporte.</div>
       <div class="step"><span class="step-number">2</span><strong>Escolha do Projeto:</strong> O apoiador escolhe um projeto aprovado pelo Ministério do Esporte e emite um comprovante de destinação do valor.</div>
